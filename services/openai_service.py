@@ -3,7 +3,7 @@ from huggingface_hub import InferenceClient
 
 HF_API_KEY = os.getenv("HF_API_KEY")
 
-# Initialize Hugging Face client correctly
+# Initialize Hugging Face client with token
 hf_client = InferenceClient(token=HF_API_KEY)
 
 def ai_answer(prompt: str) -> str:
@@ -12,7 +12,7 @@ def ai_answer(prompt: str) -> str:
     """
     try:
         response = hf_client.text_generation(
-            model="gpt2",   # You can change this to a better model later
+            model="openai-community/gpt2",  # ✅ valid HF model repo
             prompt=prompt,
             max_new_tokens=200,
         )
