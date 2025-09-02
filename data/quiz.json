@@ -1,0 +1,32 @@
+[
+  {
+    "question": "What is the atomic number of Oxygen?",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "10"
+    ],
+    "answer": "8"
+  },
+  {
+    "question": "Which of these is a noble gas?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Helium",
+      "Chlorine"
+    ],
+    "answer": "Helium"
+  },
+  {
+    "question": "What does SN2 stand for?",
+    "options": [
+      "Single Nucleophile 2",
+      "Substitution Nucleophilic Bimolecular",
+      "Sulfur Nitride 2",
+      "Second-order Nucleophile"
+    ],
+    "answer": "Substitution Nucleophilic Bimolecular"
+  }
+]

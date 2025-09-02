@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Combustion of Hydrogen",
+    "equation": "H2 + O2 -> H2O",
+    "conditions": "Spark/Flame"
+  },
+  {
+    "name": "Formation of Sodium Chloride",
+    "equation": "Na + Cl2 -> NaCl",
+    "conditions": "Direct combination"
+  },
+  {
+    "name": "Rusting of Iron",
+    "equation": "Fe + O2 -> Fe2O3",
+    "conditions": "Moist air"
+  }
+]
