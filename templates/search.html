@@ -1,0 +1,35 @@
+
+{% extends "base.html" %}{% block content %}
+<div class="card"><h2>Search results for: "{{ results.query }}"</h2>
+{% if not results.query %}<div class="muted">Type something to search...</div>{% endif %}
+</div>
+{% if results.elements %}
+<div class="card"><h3>Elements</h3><div class="grid">
+{% for el in results.elements %}
+<a class="card" href="/element/{{ el.symbol }}">
+  <div><strong>{{ el.symbol }}</strong> — {{ el.name }}</div>
+  <div class="muted">Z = {{ el.atomic_number }}</div>
+  <div class="tag">{{ el.category }}</div>
+</a>
+{% endfor %}
+</div></div>{% endif %}
+{% if results.compound %}
+<div class="card"><h3>Compound (PubChem)</h3>
+<div><strong>{{ results.compound.name }}</strong></div>
+<div>Formula: {{ results.compound.formula }}</div>
+<div>Molar mass: {{ results.compound.molar_mass }}</div>
+<div>SMILES: <code>{{ results.compound.smiles }}</code></div>
+<div class="muted">Source: {{ results.compound.source }}</div></div>
+{% endif %}
+{% if results.reactions %}
+<div class="card"><h3>Reactions</h3>
+<table class="table"><thead><tr><th>Name</th><th>Equation</th><th>Conditions</th></tr></thead><tbody>
+{% for r in results.reactions %}<tr><td>{{ r.name }}</td><td>{{ r.equation }}</td><td>{{ r.conditions }}</td></tr>{% endfor %}
+</tbody></table></div>{% endif %}
+{% if results.glossary %}
+<div class="card"><h3>Glossary</h3><ul>
+{% for g in results.glossary %}<li><strong>{{ g.term }}</strong>: {{ g.definition }}</li>{% endfor %}
+</ul></div>{% endif %}
+{% if not results.elements and not results.compound and not results.reactions and not results.glossary and results.query %}
+<div class="card">No results found.</div>{% endif %}
+{% endblock %}

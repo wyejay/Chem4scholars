@@ -1,0 +1,16 @@
+
+{% extends "base.html" %}{% block content %}
+{% if not element %}
+<div class="card">Element "{{ symbol }}" not found.</div>
+{% else %}
+<div class="card">
+  <h2>{{ element.symbol }} — {{ element.name }}</h2>
+  <div>Atomic number: {{ element.atomic_number }}</div>
+  <div>Atomic mass: {{ element.atomic_mass }}</div>
+  <div>Category: {{ element.category }}</div>
+  {% if element.boiling_point %}<div>Boiling point: {{ element.boiling_point }} K</div>{% endif %}
+  {% if element.melting_point %}<div>Melting point: {{ element.melting_point }} K</div>{% endif %}
+  <div class="muted">Sample dataset; extend elements.json for full table.</div>
+</div>
+{% endif %}
+{% endblock %}

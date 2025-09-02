@@ -1,0 +1,5 @@
+
+{% extends "base.html" %}{% block content %}
+<div class="card"><h2>Chemistry Glossary</h2>
+<ul>{% for term, defn in glossary.items() %}<li><strong>{{ term }}</strong>: {{ defn }}</li>{% endfor %}</ul>
+</div>{% endblock %}

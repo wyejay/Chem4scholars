@@ -1,0 +1,7 @@
+
+{% extends "base.html" %}{% block content %}
+<div class="card"><h2>Equation Balancer</h2>
+<input type="text" id="eq-input" placeholder="e.g., C2H6 + O2 -> CO2 + H2O"/>
+<button class="btn" onclick="balanceEq()">Balance</button>
+<div id="eq-output" class="muted" style="margin-top:.5rem"></div>
+</div>{% endblock %}

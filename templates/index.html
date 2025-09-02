@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}{% block content %}
+<div class="card">
+  <h2>Explore Chemistry</h2>
+  <form action="/search" method="get" style="margin:.5rem 0 1rem">
+    <input type="text" name="q" placeholder="Search elements, compounds, reactions or terms (e.g., Na, Sodium, H2O, SN2)"/>
+  </form>
+  <div class="muted">Tip: Click an element below for quick info.</div>
+</div>
+<div class="card">
+  <h3>Periodic Table (sample)</h3>
+  <div class="grid">
+    {% for sym, el in config['ELEMENTS'].items() %}
+    <a class="card" href="/element/{{ sym }}">
+      <div><strong>{{ sym }}</strong> — {{ el.name }}</div>
+      <div class="muted">Z = {{ el.atomic_number }}</div>
+      <div class="tag">{{ el.category }}</div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

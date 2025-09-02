@@ -1,0 +1,14 @@
+
+{% extends "base.html" %}{% block content %}
+<div class="card"><h2>Chemistry Quiz</h2>
+<ol>
+{% for q in questions %}
+<li style="margin-bottom:1rem">
+  <div><strong>{{ q.question }}</strong></div>
+  <ul style="list-style: lower-alpha">
+  {% for opt in q.options %}<li>{{ opt }}</li>{% endfor %}
+  </ul>
+  <div class="muted">Answer: {{ q.answer }}</div>
+</li>
+{% endfor %}
+</ol></div>{% endblock %}

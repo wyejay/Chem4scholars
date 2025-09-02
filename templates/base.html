@@ -1,0 +1,20 @@
+
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Chemistry Web App</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script defer src="{{ url_for('static', filename='scripts.js') }}"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head><body>
+<header><div class="container">
+<strong>Chemistry Web App</strong>
+<nav style="margin-top:.5rem">
+  <a href="/">Home</a>
+  <a href="/glossary">Glossary</a>
+  <a href="/reaction">Reactions</a>
+  <a href="/quiz">Quiz</a>
+  <a href="/ai">AI Assistant</a>
+</nav>
+</div></header>
+<main class="container">{% block content %}{% endblock %}</main>
+</body></html>
