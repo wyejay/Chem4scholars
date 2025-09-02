@@ -3,5 +3,8 @@ gunicorn==22.0.0
 requests==2.32.3
 openai>=1.0.0
 chempy==0.9.0
+
+# Hugging Face lightweight setup
 transformers==4.43.3
-torch>=2.0.0
+accelerate==0.31.0
+torch==2.0.0+cpu ; sys_platform != "darwin"
